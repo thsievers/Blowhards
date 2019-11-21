@@ -1,0 +1,62 @@
+---
+title: "WindProject"
+author: "Blake Beal"
+date: "11/18/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(odbc)
+library(DBI)
+library(usmap)
+library(ggplot2)
+
+```
+
+Connect to Database
+
+```{r}
+
+con <- DBI::dbConnect(odbc::odbc(), Driver = "SQL Server", 
+                      Server = "MSI\\SQLEXPRESS", Database = "testProjectWind", 
+                      Trusted_Connection = "True")
+```
+
+Run query and plot data from it
+
+```{r}
+
+testData <- dbGetQuery(con, 'SELECT "Operating Year", "Number of Turbines" FROM dbo.WindCap2017')
+summary(testData)
+
+plot(testData)
+
+StateTotals <- dbGetQuery(con, 'SELECT State as state, Sum("Nameplate Capacity (MW)") AS NC FROM dbo.WindCap2017
+GROUP BY State ORDER BY NC DESC')
+names(StateTotals)
+
+plot_usmap(data = StateTotals, values = "NC") + 
+  scale_fill_continuous(low = "white", high = "green") +
+  labs(title = "Total Wind Capacity by State")
+
+
+ggplot(data = StateTotals, mapping = aes(x = state, y = NC), position = position_dodge2(width = 20)) +
+  geom_col()
+
+
+```
+
+saving for later:
+
+ggplot(data = testData, mapping = aes(x = "Operating Year", y = "Number of Turbines")) +
+  geom_point()
+  
+  
+Ideas:
+  stacked bar graph for each state's contribution for each year
+  plotly for graph of each state
+  
+Notes:
+  Whatever queries run, send to Jace
