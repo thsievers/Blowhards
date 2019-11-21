@@ -47,16 +47,3 @@ ggplot(data = StateTotals, mapping = aes(x = state, y = NC), position = position
 
 
 ```
-
-saving for later:
-
-ggplot(data = testData, mapping = aes(x = "Operating Year", y = "Number of Turbines")) +
-  geom_point()
-  
-  
-Ideas:
-  stacked bar graph for each state's contribution for each year
-  plotly for graph of each state
-  
-Notes:
-  Whatever queries run, send to Jace
