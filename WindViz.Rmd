@@ -1,0 +1,58 @@
+---
+title: "WindProject"
+author: ""
+date: "11/18/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(odbc)
+library(DBI)
+library(usmap)
+library(ggplot2)
+
+```
+
+# Connect to Database
+
+```{r}
+
+con <- DBI::dbConnect(odbc::odbc(), Driver = "SQL Server", 
+                      Server = "MSI\\SQLEXPRESS", Database = "testProjectWind", 
+                      Trusted_Connection = "True")
+```
+
+# Number of Turbines per Operating Year for each Wind Farm
+
+```{r}
+
+turbinesPerYear <- dbGetQuery(con, 
+                              'SELECT "Operating Year", "Number of Turbines" 
+                              FROM dbo.WindCap2017')
+summary(turbinesPerYear)
+
+plot(turbinesPerYear)
+
+```
+
+## Total Wind Capacity by State
+```{r}
+
+StateTotals <- dbGetQuery(con, 
+'SELECT State as state, Sum("Nameplate Capacity (MW)") AS NC 
+FROM dbo.WindCap2017
+GROUP BY State ORDER BY NC DESC')
+
+plot_usmap(data = StateTotals, values = "NC") + 
+  scale_fill_continuous(low = "white", high = "green")
+
+
+ggplot(data = StateTotals, mapping = aes(x = state, y = NC, fill = state), position = position_dodge2(width = 20)) + 
+  geom_col() + theme(legend.position = "bottom")
+
+```
+
