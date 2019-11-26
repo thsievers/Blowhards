@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Displaying Images</title>
-</head>
 <body>
 <h1>
   WIND BABY
