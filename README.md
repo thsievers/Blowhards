@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>
-  Don't be afraid to be &lt;then a 99% success:
+  WIND BABY
 </h1>
 
- <img src="file://c:Users/thoma_000/Desktop/WindCapByStat.jpg" 
+ <img src="WindCapByStat.jpg" 
        alt="Wind Cap By State"
        width="500" height="333"> 
 
