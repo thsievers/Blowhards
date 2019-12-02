@@ -9,7 +9,9 @@
  <img src="Visuals/colorGraph.JPG">
   <p>The same data as a map, with a special color given to states with no notable wind power.</p>
  <img src="Visuals/colorMap.JPG">
-  <p>A graph of the results of our third view-creating SELECT query.</p>
+  <p>Graphs of the results of our view-creating SELECT queries.</p>
+  <img src ="growthGraph13.png">
+  <img src ="growthGraph17.png">
   <img src ="growthGraph.png">
   <p>This Chart Shows Which States Produce the Most Wind Energy</p>
  <img src="Visuals/TotalInvestments.JPG">
