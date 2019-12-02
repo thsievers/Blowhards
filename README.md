@@ -9,6 +9,7 @@
  <img src="Visuals/colorGraph.JPG">
   <p>The same data as a map, with a special color given to states with no notable wind power.</p>
  <img src="Visuals/colorMap.JPG">
+ <img src="Visuals/TotalInvestments.JPG">
   
 </body>
 </html>
