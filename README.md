@@ -13,9 +13,6 @@
   <img src ="growthGraph13.png">
   <img src ="growthGraph17.png">
   <img src ="growthGraph.png">
-  <!--
-  
--->
   <img src="Visuals/giphy.gif">
   
 </body>
