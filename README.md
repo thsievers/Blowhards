@@ -13,8 +13,10 @@
   <img src ="growthGraph13.png">
   <img src ="growthGraph17.png">
   <img src ="growthGraph.png">
+  <!--
   <p>This Chart Shows Which States Produce the Most Wind Energy</p>
  <img src="Visuals/TotalInvestments.JPG">
+-->
   <img src="Visuals/giphy.gif">
   
 </body>
