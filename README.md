@@ -11,6 +11,7 @@
  <img src="Visuals/colorMap.JPG">
   <p>This Chart Shows Which States Produce the Most Wind Energy</p>
  <img src="Visuals/TotalInvestments.JPG">
+  <img src="Visuals/giphy.gif">
   
 </body>
 </html>
